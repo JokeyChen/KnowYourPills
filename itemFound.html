@@ -1,28 +1,32 @@
+<!DOCTYPE html>
 <html>
-<title>
-  Item Not Found :(
-</title>
-<body bgcolor="#BC8F8F">
-  <button onclick="goBack()">Back</button>
-  <script>
-  function goBack() {
-    window.history.back();
-  }
-  </script>
-  <center><h1> Item Not Found </h1></center>
-  <center>
-    <hr color="black"/>
-    <br><br><br><br>
-    <a href="scan.html" >
-      <button type="button">Scan Again</button>
-    </a>
-    <br><br><br><br>
-    <a href="index.html" >
-      <button type="button">Main Menu</button>
-    </a>
-    <a href="history.html" >
-      <button type="button">History</button>
-    </a>
-  </center>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Item Found</title>
+  </head>
+  <body bgcolor="#BC8F8F">
+    <button onclick="goBack()">Back</button>
+    <center>
+      <h1>Item Found</h1>
+    </center>
+    <center>
+      <hr color="black"/>
+      <br><br><br><br>
+      <a href="scan.html" >
+        <button type="button">Scan Next</button>
+      </a>
+      <br><br><br><br>
+      <a href="index.html" >
+        <button type="button">Main Menu</button>
+      </a>
+      <a href="history.html" >
+        <button type="button">History</button>
+      </a>
+    </center>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+  </body>
 </html>
