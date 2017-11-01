@@ -4,21 +4,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item Found</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <link rel="stylesheet" href="public/css/main.css">
   </head>
   <body>
     <div class="container">
       <div class="banner">
-        <p>Item Found</p>
+        <p class="is-size-2">Item Found!</p>
       </div>
       <div class="result-body">
         <img src="public/assets/GNClogo.png" alt="gnc logo">
-        <p class="name">Triple Strength Fish Oil</p>
-        <p class="direction-num">1</p>
-        <p class="direction-text">capsule per day with food</p>
+        <p class="med-name is-size-4">Triple Strength Fish Oil</p>
+        <div class="columns is-mobile">
+          <div class="column is-half">
+            <p class="direction-num">1</p>
+          </div>
+          <div class="column is-half">
+            <p class="direction-text is-size-4">capsule per day with food</p>
+          </div>
+        </div>
       </div>
-      <div class="new-reminder">
+      <div class="create-reminder">
         <a href="#">
           <img src="public/assets/CreateReminder.png" alt="create reminder">
         </a>
