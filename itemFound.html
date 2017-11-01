@@ -2,27 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item Found</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
   </head>
-  <body bgcolor="#BC8F8F">
-    <button onclick="goBack()">Back</button>
-    <center>
-      <h1>Item Found</h1>
-    </center>
-    <center>
-      <hr color="black"/>
-      <br><br><br><br>
-      <a href="scan.html" >
-        <button type="button">Scan Next</button>
-      </a>
-      <br><br><br><br>
-      <a href="index.html" >
-        <button type="button">Main Menu</button>
-      </a>
-      <a href="history.html" >
-        <button type="button">History</button>
-      </a>
-    </center>
+  <body>
+    <a onclick="goBack()">Back</a>
+    <h1>Item Found</h1>
+    <a href="scan.html">Scan Next</a>
+    <a href="index.html">Main Menu</a>
+    <a href="history.html">History</a>
     <script>
     function goBack() {
       window.history.back();

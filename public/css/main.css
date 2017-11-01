@@ -1,0 +1,24 @@
+.logo img {
+  width: 50%;
+  margin: auto;
+  padding-top: 120px;
+  padding-left: 20px;
+  display: block;
+}
+
+.logo {
+  background-color: #1c3754;
+  height: 55vh;
+}
+
+.scan {
+  background-color: #c45d28;
+}
+
+.reminders {
+  background-color: #5cc8e4;
+}
+
+.history {
+  background-color: #54677c;
+}
