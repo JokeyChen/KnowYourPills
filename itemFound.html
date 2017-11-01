@@ -8,15 +8,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
   </head>
   <body>
-    <a onclick="goBack()">Back</a>
-    <h1>Item Found</h1>
-    <a href="scan.html">Scan Next</a>
-    <a href="index.html">Main Menu</a>
-    <a href="history.html">History</a>
-    <script>
-    function goBack() {
-      window.history.back();
-    }
-    </script>
+    <div class="container">
+      <div class="banner">
+        <p>Item Found</p>
+      </div>
+      <div class="result-body">
+        <img src="public/assets/GNClogo.png" alt="gnc logo">
+        <p class="name">Triple Strength Fish Oil</p>
+        <p class="direction-num">1</p>
+        <p class="direction-text">capsule per day with food</p>
+      </div>
+      <div class="new-reminder">
+        <a href="#">
+          <img src="public/assets/CreateReminder.png" alt="create reminder">
+        </a>
+      </div>
+      <div class="scan">
+        <a href="scan.html">
+          <img src="public/assets/ScanNext.png" alt="scan next icon">
+        </a>
+      </div>
+      <div class="columns is-mobile is-gapless">
+        <div class="column is-half reminders">
+          <a href="reminders.html">
+            <img src="public/assets/Reminder.png" alt="reminders icon">
+          </a>
+        </div>
+        <div class="column is-half history">
+          <a href="history.html">
+            <img src="public/assets/History.png" alt="scan history icon">
+          </a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
