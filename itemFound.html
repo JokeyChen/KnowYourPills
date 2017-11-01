@@ -4,19 +4,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item Found</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <link rel="stylesheet" href="public/css/main.css">
   </head>
   <body>
-    <a onclick="goBack()">Back</a>
-    <h1>Item Found</h1>
-    <a href="scan.html">Scan Next</a>
-    <a href="index.html">Main Menu</a>
-    <a href="history.html">History</a>
-    <script>
-    function goBack() {
-      window.history.back();
-    }
-    </script>
+    <div class="container">
+      <div class="banner">
+        <p class="is-size-2">Item Found!</p>
+      </div>
+      <div class="result-body">
+        <img src="public/assets/GNClogo.png" alt="gnc logo">
+        <p class="med-name is-size-4">Triple Strength Fish Oil</p>
+        <div class="columns is-mobile">
+          <div class="column is-half">
+            <p class="direction-num">1</p>
+          </div>
+          <div class="column is-half">
+            <p class="direction-text is-size-4">capsule per day with food</p>
+          </div>
+        </div>
+      </div>
+      <div class="create-reminder">
+        <a href="#">
+          <img src="public/assets/CreateReminder.png" alt="create reminder">
+        </a>
+      </div>
+      <div class="scan">
+        <a href="scan.html">
+          <img src="public/assets/ScanNext.png" alt="scan next icon">
+        </a>
+      </div>
+      <div class="columns is-mobile is-gapless">
+        <div class="column is-half reminders">
+          <a href="reminders.html">
+            <img src="public/assets/Reminder.png" alt="reminders icon">
+          </a>
+        </div>
+        <div class="column is-half history">
+          <a href="history.html">
+            <img src="public/assets/History.png" alt="scan history icon">
+          </a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

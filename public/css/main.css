@@ -1,3 +1,7 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 .logo img {
   width: 50%;
   margin: auto;
@@ -7,8 +11,11 @@
 }
 
 .logo {
-  background-color: #1c3754;
   height: 55vh;
+}
+
+.logo, .result-body, .create-reminder {
+  background-color: #1c3754;
 }
 
 .scan {
@@ -21,4 +28,43 @@
 
 .history {
   background-color: #54677c;
+}
+
+.banner {
+  background-color: #52d93d;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.result-body {
+  color: white;
+}
+
+.result-body img {
+  padding-top: 40px;
+  width: 40%;
+  padding-left: 40px;
+}
+
+.result-body img, .result-body .med-name {
+  padding-left: 15%;
+}
+
+.create-reminder img {
+  width: 50%;
+  padding-bottom: 40px;
+  margin: auto;
+  display: block;
+}
+
+.direction-num {
+  font-size: 8.2rem;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.direction-text {
+  padding-top: 45px;
+  width: 100px;
 }
