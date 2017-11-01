@@ -14,7 +14,7 @@ body {
   height: 55vh;
 }
 
-.logo, .result-body, .create-reminder {
+.logo, .result, .create-reminder {
   background-color: #1c3754;
 }
 
@@ -67,4 +67,8 @@ body {
 .direction-text {
   padding-top: 45px;
   width: 100px;
+}
+
+[v-cloak] {
+  display: none;
 }
