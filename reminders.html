@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reminders</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-</head>
-<body>
-  <div style="position: relative; width: 250px;">
-    <a href="help page.html"><div style="position: absolute; top: 0; right: 0; width: 100px; text-align:right;">
-      help
-    </div></a>
-  </div>
-  <a onclick="goBack()">Back</a>
-  <h1>Reminders</h1>
-  <script>
-  function goBack() {
-    window.history.back();
-  }
-  </script>
-  <label class="switch">
-    <input type="checkbox" id="togBtn">
-    <div class="slider round">
-      <span class="on">ON</span>
-      <span class="off">OFF</span>
-    </div></label>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reminders</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <link rel="stylesheet" href="public/css/main.css" />
+  </head>
+  <body>
+    <a onclick="goBack()">Back</a>
+    <div class="hero" id="app">
+      <div class="hero-head">
+        <h1 class="title has-text-centered">Reminders</h1>
+      </div>
+      <div class="hero-body" v-cloak>
+        <ul>
+          <li v-for="(pill, index) in pills">
+            <div class="level is-mobile">
+              <div class="level-left">
+                <div class="level-item">
+                  <p>{{ pill.name }}</p>
+                </div>
+              </div>
+              <div class="level-right">
+                <div class="level-item">
+                  <div class="select is-small">
+                    <select>
+                      <option>Activated</option>
+                      <option>Deactivated</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="level-item">
+                  <button class="delete is-small" v-on:click="pills.splice(index, 1)"></button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        pills: [
+          { name: 'GNC Triple Strength Fish Oil' },
+          { name: 'Mucinex DM' },
+          { name: 'CVS Health Coenzyme Q10' },
+          { name: 'PlaceHolder Vitamin C' }
+        ]
+      }
+    })
+    </script>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+  </body>
 </html>
