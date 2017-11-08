@@ -64,7 +64,13 @@ body {
   padding: 10px 0;
 }
 
-.result-body {
+.item-found {
+  color: white;
+  background-color: #1c3754;
+}
+
+.item-found button {
+  font-size: 2em;
   color: white;
 }
 
@@ -76,13 +82,6 @@ body {
 
 .result-body img, .result-body .med-name {
   padding-left: 15%;
-}
-
-.create-reminder img {
-  width: 50%;
-  padding-bottom: 40px;
-  margin: auto;
-  display: block;
 }
 
 .direction-num {
