@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="public/css/main.css" />
   </head>
   <body>
-    <div class="home">
+    <div class="home" id="app">
       <div class="level is-mobile navigation">
         <div class="level-item">
           <a href="help.html">Help</a>
@@ -25,9 +25,10 @@
         </div>
       </div>
       <div class="section">
-        <p>Coming up...</p>
+        <p><em>It's time!</em></p>
         <img src="public/assets/GNClogo.png" alt="GNC">
         <p>GNC Triple Strength Fish Oil<span>1 Capsule</span>with dinner tonight</p>
+        <button @click="complete">Complete<i :class="completeIcon" aria-hidden="true"></i></button>
       </div>
       <div class="scan has-text-centered">
         <a href="scan.html">Scan</a>
@@ -41,5 +42,23 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        completeIcon: 'fa fa-square-o'
+      },
+      methods: {
+        complete: function () {
+          if (this.completeIcon === 'fa fa-check-square-o') {
+            this.completeIcon = 'fa fa-square-o'
+          } else {
+            this.completeIcon = 'fa fa-check-square-o'
+          }
+        }
+      }
+    })
+    </script>
   </body>
 </html>
