@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scan</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  </head>
+  <body>
+    <div class="hero" id="app">
+      <div class="hero-head">
+        <a onclick="goBack()">Back</a>
+      </div>
+      <div class="hero-body has-text-centered">
+        <h1>Take a photo or upload a photo</h1>
+        <p>Make sure we can see the barcode ☺</p>
+        <p><b>If the file is an jpeg image, we fake it as an successful scan</b></p>
+        <div class="file is-boxed is-centered">
+          <label class="file-label">
+            <input class="file-input" @change="computeScanResult" type="file" name="resume">
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fa fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Upload
+              </span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      methods: {
+        computeScanResult: function (e) {
+          // if the file is an jpeg image, we fake it as an successful scan
+          var filename = e.target.files[0].name
+          if (filename.indexOf('.jpg') !== -1 ||  filename.indexOf('.jpeg') !== -1) {
+            window.location.href = 'itemFound.html'
+          } else {
+            window.location.href = 'itemNotFound.html'
+          }
+        }
+      }
+    })
+    </script>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+  </body>
+</html>

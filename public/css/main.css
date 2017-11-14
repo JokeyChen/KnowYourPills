@@ -1,0 +1,105 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.home {
+  background-color: #1c3754;
+  color: white;
+}
+
+.logo {
+  width: 70px;
+  padding-left: 20px;
+}
+
+.navigation * {
+  color: #ffe57f;
+}
+
+.section {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+
+.section p {
+  margin: 10px auto;
+}
+
+.section span {
+  display: block;
+  font-size: 3em;
+  line-height: 2em;
+}
+
+.section button {
+  font-size: 2em;
+  color: white;
+}
+
+.scan {
+  background-color: #c45d28;
+  height: 120px;
+}
+
+.scan a {
+  font-size: 2.5em;
+}
+.reminders a, .history a {
+  font-size: 2em;
+}
+
+.scan a, .reminders a, .history a {
+  color: white;
+}
+
+.reminders {
+  background-color: #5cc8e4;
+  height: 120px;
+}
+
+.history {
+  background-color: #54677c;
+  height: 120px;
+}
+
+.banner {
+  background-color: #52d93d;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.item-found {
+  color: white;
+  background-color: #1c3754;
+}
+
+.item-found button {
+  font-size: 2em;
+  color: white;
+}
+
+.result-body img {
+  padding-top: 40px;
+  width: 40%;
+  padding-left: 40px;
+}
+
+.result-body img, .result-body .med-name {
+  padding-left: 15%;
+}
+
+.direction-num {
+  font-size: 8.2rem;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.direction-text {
+  padding-top: 45px;
+  width: 100px;
+}
+
+[v-cloak] {
+  display: none;
+}
