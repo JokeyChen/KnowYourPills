@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
     <link rel="stylesheet" href="public/css/main.css" />
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
   </head>
   <body>
     <div class="hero">
@@ -15,9 +16,9 @@
         <div class="box">
           <form class="" action="dashboard.html" method="get">
             <div class="field">
-              <label class="label">Username</label>
+              <label class="label">Email</label>
               <p class="control has-icons-left has-icons-right">
-                <input class="input" type="text" placeholder="Username">
+                <input id="txtEmail" class="input" type="email" placeholder="Email Address">
                 <span class="icon is-small is-left">
                   <i class="fa fa-user"></i>
                 </span>
@@ -26,7 +27,7 @@
             <div class="field">
               <label class="label">Password</label>
               <p class="control has-icons-left">
-                <input class="input" type="password" placeholder="Password">
+                <input id="txtPassword" class="input" type="password" placeholder="Password">
                 <span class="icon is-small is-left">
                   <i class="fa fa-lock"></i>
                 </span>
@@ -34,12 +35,12 @@
             </div>
             <div class="field is-grouped">
               <p class="control">
-                <button class="button is-success is-large">
-                  Sign in
+                <button id="btnLogin" class="button is-success is-large">
+                  Log in
                 </button>
               </p>
               <p class="control">
-                <button class="button is-large">
+                <button id="btnSignUp" class="button is-large">
                   Sign up
                 </button>
               </p>
@@ -48,5 +49,6 @@
         </div>
       </div>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
