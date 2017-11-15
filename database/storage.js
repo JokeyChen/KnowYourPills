@@ -33,18 +33,15 @@
       switch (error.code) {
         case 'storage/object_not_found':
           // File doesn't exist
+          console.log('Image not found for product: ' + barcode);
           break;
-
         case 'storage/unauthorized':
           // User doesn't have permission to access the object
+          console.log('User does not have permission to access ' + path);
           break;
-
-        case 'storage/canceled':
-          // User canceled the upload
-          break;
-
         case 'storage/unknown':
           // Unknown error occurred, inspect the server response
+          console.log('An unknown error occurred');
           break;
       }
     });
