@@ -7,10 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-    <link rel="stylesheet" href="public/css/main.css" />
+    <link rel="stylesheet" href="public/css/reminders.css" />
   </head>
   <body>
-    <a onclick="goBack()">Back</a>
     <div class="hero" id="app">
       <div class="hero-head">
         <h1 class="title has-text-centered">Reminders</h1>
@@ -18,13 +17,9 @@
       <div class="hero-body" v-cloak>
         <ul>
           <li v-for="(pill, index) in pills">
+            <p>{{ pill.name }}</p>
             <div class="level is-mobile">
               <div class="level-left">
-                <div class="level-item">
-                  <p>{{ pill.name }}</p>
-                </div>
-              </div>
-              <div class="level-right">
                 <div class="level-item">
                   <div class="select is-small">
                     <select>
@@ -33,13 +28,25 @@
                     </select>
                   </div>
                 </div>
+              </div>
+              <div class="level-right">
                 <div class="level-item">
-                  <button class="delete is-small" v-on:click="pills.splice(index, 1)"></button>
+                  <a class="button is-danger is-outlined" v-on:click="deletePill(index)">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fa fa-times"></i>
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>
           </li>
         </ul>
+        <div class="level is-mobile">
+          <div class="level-item">
+            <button onclick="goBack()" class="button" id="backBtn">&lt; Go Back</button>
+          </div>
+        </div>
       </div>
     </div>
     <script src="https://unpkg.com/vue"></script>
@@ -53,6 +60,13 @@
           { name: 'CVS Health Coenzyme Q10' },
           { name: 'PlaceHolder Vitamin C' }
         ]
+      },
+      methods: {
+        deletePill: function (index) {
+          if (confirm('Are you sure you want to delete? There is no way to undo this action.')) {
+            this.pills.splice(index, 1)
+          }
+        }
       }
     })
     </script>
