@@ -10,40 +10,66 @@
     <link rel="stylesheet" href="public/css/main.css" />
   </head>
   <body>
-    <div class="level is-mobile navigation">
-      <div class="level-item">
-        <a href="help.html">Help</a>
+    <div id="app" v-cloak>
+      <div class="level is-mobile navigation">
+        <div class="level-item">
+          <a href="help.html">Help</a>
+        </div>
+        <div class="level-item" v-if="status == 'upcoming' || status == 'due'">
+          <a href="dashboard.html">
+            <img class="logo" src="public/assets/Logo.png" alt="logo">
+          </a>
+        </div>
+        <div class="level-item">
+          <a href="settings.html">Settings</a>
+        </div>
       </div>
-      <div class="level-item">
-        <a href="dashboard.html">
-          <img class="logo" src="public/assets/Logo.png" alt="logo">
+      <div class="section">
+        <img v-if="status == 'default'" class="logo" src="public/assets/Logo.png" alt="logo">
+        <p v-if="status == 'upcoming'">Coming up...</p>
+        <p v-if="status == 'due'"><em>It's time!</em></p>
+        <div class="pill-data" v-if="status == 'upcoming' || status == 'due'">
+          <img src="public/assets/GNClogo.png" alt="GNC">
+          <p>GNC Triple Strength Fish Oil<span>1 Capsule</span>with dinner tonight</p>
+        </div>
+        <button v-if="status == 'due'" @click="complete">Complete<i :class="completeIcon" aria-hidden="true"></i></button>
+      </div>
+      <a href="scan.html">
+        <div class="scan has-text-centered">
+          Scan
+        </div>
+      </a>
+      <div class="columns is-mobile is-gapless">
+        <a href="reminders.html" class="column is-half">
+          <div class="reminders has-text-centered">
+            Reminders
+          </div>
+        </a>
+        <a href="history.html" class="column is-half">
+          <div class="history has-text-centered">
+            History
+          </div>
         </a>
       </div>
-      <div class="level-item">
-        <a href="settings.html">Settings</a>
-      </div>
     </div>
-    <div class="section">
-      <p>Coming up...</p>
-      <img src="public/assets/GNClogo.png" alt="GNC">
-      <p>GNC Triple Strength Fish Oil<span>1 Capsule</span>with dinner tonight</p>
-    </div>
-    <a href="scan.html">
-      <div class="scan has-text-centered">
-        Scan
-      </div>
-    </a>
-    <div class="columns is-mobile is-gapless">
-      <a href="reminders.html" class="column is-half">
-        <div class="reminders has-text-centered">
-          Reminders
-        </div>
-      </a>
-      <a href="history.html" class="column is-half">
-        <div class="history has-text-centered">
-          History
-        </div>
-      </a>
-    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        status: 'default',
+        completeIcon: 'fa fa-square-o'
+      },
+      methods: {
+        complete: function () {
+          if (this.completeIcon === 'fa fa-check-square-o') {
+            this.completeIcon = 'fa fa-square-o'
+          } else {
+            this.completeIcon = 'fa fa-check-square-o'
+          }
+        }
+      }
+    })
+    </script>
   </body>
 </html>
