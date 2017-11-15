@@ -1,0 +1,22 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #1c3754;
+  color: white;
+  height: 100vh;
+}
+
+.title {
+  color: white;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+#backBtn {
+  margin-top: 100px;
+}
+
+[v-cloak] {
+  display: none;
+}

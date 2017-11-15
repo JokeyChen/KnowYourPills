@@ -1,9 +1,10 @@
 body {
   font-family: 'Lato', sans-serif;
+  background-color: #1c3754;
+  color: white;
 }
 
-.home {
-  background-color: #1c3754;
+.title {
   color: white;
 }
 
@@ -13,6 +14,7 @@ body {
 }
 
 .navigation * {
+  font-size: 1.15em;
   color: #ffe57f;
 }
 
@@ -39,17 +41,8 @@ body {
 .scan {
   background-color: #c45d28;
   height: 120px;
-}
-
-.scan a {
   font-size: 2.5em;
-}
-.reminders a, .history a {
-  font-size: 2em;
-}
-
-.scan a, .reminders a, .history a {
-  color: white;
+  padding-top: 25px;
 }
 
 .reminders {
@@ -62,11 +55,32 @@ body {
   height: 120px;
 }
 
+.reminders, .history {
+  padding-top: 35px;
+  font-size: 2em;
+}
+
+.scan, .reminders, .history {
+  color: white;
+}
+
 .banner {
   background-color: #52d93d;
   color: white;
   text-align: center;
   padding: 10px 0;
+  position: fixed;
+  width: 100%;
+
+  /* animation parameters */
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -ms-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -ms-animation-delay: 2s;
+  -o-animation-delay: 2s;
 }
 
 .item-found {
@@ -89,6 +103,10 @@ body {
   padding-left: 15%;
 }
 
+.result-body {
+  padding-top: 20px;
+}
+
 .direction-num {
   font-size: 8.2rem;
   text-align: right;
@@ -98,6 +116,15 @@ body {
 .direction-text {
   padding-top: 45px;
   width: 100px;
+}
+
+.create-reminder {
+  margin: 40px 0;
+}
+
+.error-body {
+  height: 340px;
+  padding: 100px 0;
 }
 
 [v-cloak] {

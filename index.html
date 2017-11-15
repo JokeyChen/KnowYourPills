@@ -7,14 +7,15 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-    <link rel="stylesheet" href="public/css/main.css" />
+    <link rel="stylesheet" href="public/css/login.css" />
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
   </head>
   <body>
     <div class="hero">
       <div class="hero-body">
+        <img class="logo" src="public/assets/Logo.png" alt="logo">
         <div class="box">
-          <form class="" action="dashboard.html" method="get">
+          <form class="login-form" action="dashboard.html" method="get">
             <div class="field">
               <label class="label">Email</label>
               <p class="control has-icons-left has-icons-right">
@@ -33,17 +34,30 @@
                 </span>
               </p>
             </div>
-            <div class="field is-grouped">
-              <p class="control">
-                <button id="btnLogin" class="button is-success is-large">
-                  Log in
-                </button>
-              </p>
-              <p class="control">
-                <button id="btnSignUp" class="button is-large">
-                  Sign up
-                </button>
-              </p>
+            <div class="field">
+              <!-- Main container -->
+              <nav class="level is-mobile">
+                <!-- Left side -->
+                <div class="level-left">
+                  <div class="level-item">
+                    <p class="control">
+                      <button id="btnLogin" class="button is-large">
+                        Log in
+                      </button>
+                    </p>
+                  </div>
+                </div>
+                <!-- Right side -->
+                <div class="level-right">
+                  <div class="level-item">
+                    <p class="control">
+                      <button id="btnSignUp" class="button is-large">
+                        Sign up
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </nav>
             </div>
           </form>
         </div>

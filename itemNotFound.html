@@ -7,17 +7,42 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <link rel="stylesheet" href="public/css/main.css">
   </head>
   <body>
-    <a onclick="goBack()">Back</a>
-    <h1>Item Not Found</h1>
-    <a href="scan.html">Scan Again</a>
-    <a href="dashboard.html">Main Menu</a>
-    <a href="history.html">History</a>
-    <script>
-    function goBack() {
-      window.history.back();
-    }
-    </script>
+    <div class="item-not-found">
+      <div class="level is-mobile navigation">
+        <div class="level-item">
+          <a href="dashboard.html">
+            <img class="logo" src="public/assets/Logo.png" alt="logo">
+          </a>
+        </div>
+      </div>
+      <div class="hero">
+        <div class="hero-body">
+          <div class="error-body">
+            <h1 class="title has-text-centered">Item Not Found</h1>
+            <p class="has-text-centered">Sorry... We are trying our best to update our database every day!</p>
+          </div>
+        </div>
+      </div>
+      <a href="scan.html">
+        <div class="scan has-text-centered">
+          Scan Next
+        </div>
+      </a>
+      <div class="columns is-mobile is-gapless">
+        <a href="reminders.html" class="column is-half">
+          <div class="reminders has-text-centered">
+            Reminders
+          </div>
+        </a>
+        <a href="history.html" class="column is-half">
+          <div class="history has-text-centered">
+            History
+          </div>
+        </a>
+      </div>
+    </div>
   </body>
 </html>

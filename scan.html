@@ -7,14 +7,12 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <link rel="stylesheet" href="public/css/scan.css">
   </head>
   <body>
     <div class="hero" id="app">
-      <div class="hero-head">
-        <a onclick="goBack()">Back</a>
-      </div>
       <div class="hero-body has-text-centered">
-        <h1>Take a photo or upload a photo</h1>
+        <h1 class="title">Take a photo <span>or</span> upload a photo</h1>
         <p>Make sure we can see the barcode ☺</p>
         <p><b>If the file is an jpeg image, we fake it as an successful scan</b></p>
         <div class="file is-boxed is-centered">
@@ -30,6 +28,7 @@
             </span>
           </label>
         </div>
+        <a onclick="goBack()">Back</a>
       </div>
     </div>
     <script src="https://unpkg.com/vue"></script>

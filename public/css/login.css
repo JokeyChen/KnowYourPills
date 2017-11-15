@@ -1,0 +1,15 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #1c3754;
+  color: white;
+  height: 100vh;
+}
+
+.logo {
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+
+#btnLogin {
+  background-color: #ffe57f;
+}

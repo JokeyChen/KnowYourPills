@@ -7,36 +7,46 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-    <link rel="stylesheet" href="public/css/main.css" />
+    <link rel="stylesheet" href="public/css/settings.css" />
   </head>
   <body>
     <div class="hero">
       <div class="hero-head">
-        <h1 class="title has-text-centered">Settings</h1>
+        <div class="level is-mobile">
+          <div class="level-item">
+            <a onclick="goBack()">Back</a>
+          </div>
+          <div class="level-item">
+            <h1 class="title has-text-centered">Settings</h1>
+          </div>
+          <div class="level-item">
+            <a onclick="goBack()">Save</a>
+          </div>
+        </div>
       </div>
       <div class="hero-body">
-        <form class="" action="dashboard.html" method="get">
-          <div class="field">
-            <label class="label">Primary Number</label>
-            <div class="control">
-              <input class="input" type="number" placeholder="Numbers we can text about your reminders">
+        <div class="box">
+          <form class="" action="dashboard.html" method="get">
+            <div class="field">
+              <label class="label">Primary Number</label>
+              <div class="control">
+                <input class="input" type="number" placeholder="Numbers we can text about your reminders">
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <label class="label">Additional Numbers</label>
-            <div class="control">
-              <input class="input" type="number" placeholder="Additional numbers">
+            <div class="field">
+              <label class="label">Additional Numbers</label>
+              <div class="control">
+                <input class="input" type="number" placeholder="Additional numbers">
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <p class="control">
-              <button class="button is-primary is-large">
-                Save
-              </button>
-            </p>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
   </body>
 </html>

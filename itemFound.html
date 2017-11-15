@@ -7,12 +7,20 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="public/css/main.css">
   </head>
   <body>
     <div class="item-found" id="app" v-cloak>
-      <div class="banner" @click="home">
+      <div class="banner animated fadeOutUp">
         <p class="is-size-2">Item Found!</p>
+      </div>
+      <div class="level is-mobile navigation">
+        <div class="level-item">
+          <a href="dashboard.html">
+            <img class="logo" src="public/assets/Logo.png" alt="logo">
+          </a>
+        </div>
       </div>
       <div class="result-body">
         <img :src="medLogo" alt="gnc logo">
@@ -29,16 +37,22 @@
       <div class="create-reminder has-text-centered">
         <button @click="createReminder">{{ buttonName }}</button>
       </div>
-      <div class="scan has-text-centered">
-        <a href="scan.html">Scan Next</a>
-      </div>
+      <a href="scan.html">
+        <div class="scan has-text-centered">
+          Scan Next
+        </div>
+      </a>
       <div class="columns is-mobile is-gapless">
-        <div class="column is-half reminders has-text-centered">
-          <a href="reminders.html">Reminders</a>
-        </div>
-        <div class="column is-half history has-text-centered">
-          <a href="history.html">History</a>
-        </div>
+        <a href="reminders.html" class="column is-half">
+          <div class="reminders has-text-centered">
+            Reminders
+          </div>
+        </a>
+        <a href="history.html" class="column is-half">
+          <div class="history has-text-centered">
+            History
+          </div>
+        </a>
       </div>
     </div>
     <script src="https://unpkg.com/vue"></script>
@@ -69,9 +83,6 @@
               setTimeout(notify, 10000) // wait for 10 seconds to notify
             }
           })
-        },
-        home: function () {
-          window.location.href = 'complete.html'
         }
       }
     })
