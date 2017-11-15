@@ -38,6 +38,12 @@ body {
   color: white;
 }
 
+.section .logo {
+  margin: 65px 0 65px 50px;
+  width: 300px;
+  height: 200px;
+}
+
 .scan {
   background-color: #c45d28;
   height: 120px;

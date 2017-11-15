@@ -9,11 +9,6 @@ body {
   color: white;
 }
 
-a {
-  font-size: 1.15em;
-  color: #ffe57f;
-}
-
-button {
-  width: 100%;
+#backBtn {
+  margin-top: 100px;
 }

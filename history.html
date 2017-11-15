@@ -7,10 +7,22 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+  <link rel="stylesheet" href="public/css/history.css">
 </head>
 <body>
-  <a onclick="goBack()">Back</a>
-  <h1>History</h1>
+  <div class="hero">
+    <div class="hero-header">
+      <h1 class="title has-text-centered">History</h1>
+    </div>
+    <div class="hero-body">
+      <p class="has-text-centered">All your completed reminders will show up here.</p>
+      <div class="level is-mobile">
+        <div class="level-item">
+          <button onclick="goBack()" class="button" id="backBtn">&lt; Go Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script>
   function goBack() {
     window.history.back();
