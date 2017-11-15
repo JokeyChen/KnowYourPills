@@ -1,9 +1,10 @@
 body {
   font-family: 'Lato', sans-serif;
+  background-color: #1c3754;
+  color: white;
 }
 
-.home {
-  background-color: #1c3754;
+.title {
   color: white;
 }
 
@@ -119,6 +120,11 @@ body {
 
 .create-reminder {
   margin: 40px 0;
+}
+
+.error-body {
+  height: 340px;
+  padding: 100px 0;
 }
 
 [v-cloak] {
