@@ -39,17 +39,8 @@ body {
 .scan {
   background-color: #c45d28;
   height: 120px;
-}
-
-.scan a {
   font-size: 2.5em;
-}
-.reminders a, .history a {
-  font-size: 2em;
-}
-
-.scan a, .reminders a, .history a {
-  color: white;
+  padding-top: 25px;
 }
 
 .reminders {
@@ -60,6 +51,15 @@ body {
 .history {
   background-color: #54677c;
   height: 120px;
+}
+
+.reminders, .history {
+  padding-top: 35px;
+  font-size: 2em;
+}
+
+.scan, .reminders, .history {
+  color: white;
 }
 
 .banner {
