@@ -68,6 +68,18 @@ body {
   color: white;
   text-align: center;
   padding: 10px 0;
+  position: fixed;
+  width: 100%;
+
+  /* animation parameters */
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -ms-animation-duration: 3s;
+  -o-animation-duration: 3s;
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  -ms-animation-delay: 2s;
+  -o-animation-delay: 2s;
 }
 
 .item-found {
@@ -90,6 +102,10 @@ body {
   padding-left: 15%;
 }
 
+.result-body {
+  padding-top: 20px;
+}
+
 .direction-num {
   font-size: 8.2rem;
   text-align: right;
@@ -99,6 +115,10 @@ body {
 .direction-text {
   padding-top: 45px;
   width: 100px;
+}
+
+.create-reminder {
+  margin: 40px 0;
 }
 
 [v-cloak] {
