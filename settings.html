@@ -28,24 +28,28 @@
         <div class="box">
           <form class="" action="dashboard.html" method="get">
             <div class="field">
-              <label class="label">Primary Number</label>
+              <label class="label">Numbers to text about your reminders</label>
               <div class="control">
-                <input class="input" type="number" placeholder="Numbers we can text about your reminders">
+                <input class="input" type="number" placeholder="" value="8582336666">
               </div>
             </div>
             <div class="field">
               <label class="label">Additional Numbers</label>
               <div class="control">
-                <input class="input" type="number" placeholder="Additional numbers">
+                <input class="input" type="number" value="6199864321">
               </div>
             </div>
           </form>
         </div>
+        <button class="button is-danger is-centered is-large" onclick="logOut()">Log Out</button>
       </div>
     </div>
     <script>
     function goBack() {
       window.history.back();
+    }
+    function logOut() {
+      window.location.href = 'index.html'
     }
     </script>
   </body>

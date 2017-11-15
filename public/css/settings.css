@@ -13,3 +13,7 @@ a {
   font-size: 1.15em;
   color: #ffe57f;
 }
+
+button {
+  width: 100%;
+}
