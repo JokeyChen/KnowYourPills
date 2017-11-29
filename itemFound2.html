@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="create-reminder has-text-centered">
-        <button @click="createReminder">{{ buttonName }}</button>
+        <button @click="createReminder" :disabled="buttonClicked">{{ buttonName }}</button>
       </div>
       <a href="scan.html">
         <div class="scan has-text-centered">
@@ -92,11 +92,16 @@
         unit: 'Softgel',
         manufacturer: 'GNC',
         buttonName: 'Create a Reminder',
-        showModal: false
+        showModal: false,
+        buttonClicked: false,
       },
       methods: {
         createReminder: function () {
           this.buttonName = 'Reminder added! ☑️'
+          this.buttonClicked = true
+          console.log("[Create a reminder] clicked")
+          tracker = ga.getAll()[0];
+          tracker.send('event', 'button', 'click')
 
           function notify() {
             var options = {
