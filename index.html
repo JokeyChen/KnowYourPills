@@ -63,6 +63,20 @@
         </div>
       </div>
     </div>
-    <script src="app.js"></script>
+    <script type="text/javascript">
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAUjoyrSiM2dWgqj5rcMYARG3PC46v3Gwk",
+        authDomain: "knowyourpills.firebaseapp.com",
+        databaseURL: "https://knowyourpills.firebaseio.com",
+        projectId: "knowyourpills",
+        storageBucket: "knowyourpills.appspot.com",
+        messagingSenderId: "562459622714"
+      }
+      firebase.initializeApp(config)
+
+      firebase.database().ref('status').set('default')
+    </script>
+    <!-- <script src="app.js"></script> -->
   </body>
 </html>
