@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Google Analytics Content Experiment code -->
+    <script>function utmx_section(){}function utmx(){}(function(){var
+        k='165416061-0',d=document,l=d.location,c=d.cookie;
+        if(l.search.indexOf('utm_expid='+k)>0)return;
+        function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+        indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+            length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+            '<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+            '://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+            '&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+            valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+            '" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+    </script><script>utmx('url','A/B');</script>
+    <!-- End of Google Analytics Content Experiment code -->
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110395923-1"></script>
     <script>
@@ -46,7 +61,7 @@
           </div>
       </div>
       <div class="create-reminder has-text-centered">
-          <button @click="createReminder">{{ buttonName }}</button>
+          <button @click="createReminder" :disabled="buttonClicked">{{ buttonName }}</button>
       </div>
       <a href="scan.html">
           <div class="scan has-text-centered">
@@ -75,12 +90,16 @@
               medName: 'Triple Strengh Fish Oil',
               medNum: 1,
               medText: 'capsule per day with food',
-              buttonName: 'Create a reminder'
+              buttonName: 'Create a reminder',
+              buttonClicked: false,
           },
           methods: {
               createReminder: function () {
                   this.buttonName = 'Reminder added! ☑️'
-
+                  this.buttonClicked = true
+                  console.log("[Create a reminder] clicked")
+                  tracker = ga.getAll()[0];
+                  tracker.send('event', 'button', 'click')
                   function notify() {
                       var options = {
                           body: 'Click to see what pills need to take.'
