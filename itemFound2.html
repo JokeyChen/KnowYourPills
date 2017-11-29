@@ -1,1 +1,135 @@
-<!DOCTYPE html><html>  <head>    <!-- Global site tag (gtag.js) - Google Analytics -->    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110395923-1"></script>    <script>      window.dataLayer = window.dataLayer || [];      function gtag(){dataLayer.push(arguments);}      gtag('js', new Date());      gtag('config', 'UA-110395923-1');    </script>    <meta charset="utf-8">    <meta name="viewport" content="width=device-width, initial-scale=1">    <title>Item Found</title>    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">    <link rel="stylesheet" href="public/css/main2.css">    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>  </head>  <body>    <div class="item-found" id="app" v-cloak>      <div class="modal" v-bind:class="{ 'is-active': showModal }">        <div class="modal-background" @click="toggleModal"></div>        <div class="modal-content">          <div class="content" v-for="detail in details">            <p>{{ detail }}</p>          </div>        </div>        <button @click="toggleModal" class="modal-close is-large" aria-label="close"></button>      </div>      <div class="banner animated fadeOutUp">        <p class="is-size-2">Item Found!</p>      </div>      <div class="level is-mobile navigation">        <div class="level-item">          <a href="dashboard.html">            <img class="logo" src="public/assets/Logo.png" alt="logo">          </a>        </div>      </div>      <div class="result-body">        <div class="columns is-mobile is-gapless">          <div class="column is-4">            <img :src="logo" alt="pill logo">          </div>          <div class="column is-8">            <p class="name">{{ name }}</p>            <p class="amount">{{ usage.amount_per_take }} {{ unit }}</p>            <p class="special-instr">{{ usage.special_instr }}</p>            <button @click="toggleModal" class="button more-info"><span class="fa fa-info-circle"></span>more info</button>          </div>        </div>      </div>      <div class="create-reminder has-text-centered">        <button @click="createReminder">{{ buttonName }}</button>      </div>      <a href="scan.html">        <div class="scan has-text-centered">          Scan Next        </div>      </a>      <div class="columns is-mobile is-gapless">        <a href="reminders.html" class="column is-half">          <div class="reminders has-text-centered">            Reminders          </div>        </a>        <a href="history.html" class="column is-half">          <div class="history has-text-centered">            History          </div>        </a>      </div>    </div>    <script src="https://unpkg.com/vue"></script>    <script type="text/javascript">    var app = new Vue({      el: '#app',      data: {        details: ['Clinically Studied Multivitamin', 'Energy', 'Calorie Burning', 'Antioxidants: More antioxidant power than ever and over 30 clinically studied ingredients in every formula - all in smaller, easier-to-swallow pills.', 'Women\'s Health: Contains a clinically studied women\'s multivitamin formula shown to work better than a basic multivitamin. Helps to support bone health.', 'Energy: Shown to improve levels of key B vitamins essential for energy production.\nCalorie Burning: Features combination of thermogenic ingredients ingredients that may support calorie burning and mental sharpness.', 'Antioxidants: Packed with antioxidants to help fight free radicals that can be produced by intense exercise.'],        logo: 'public/assets/0048107103507.png',        name: 'Women\'s Ultra Mega Energy & Metabolism',        usage: {          'amount_per_take': 1,          'special_instr': 'with food',          'takes_per_day': 2        },        unit: 'Softgel',        manufacturer: 'GNC',        buttonName: 'Create a Reminder',        showModal: false      },      methods: {        createReminder: function () {          this.buttonName = 'Reminder added! ☑️'          function notify() {            var options = {                body: 'Click to see what pills need to take.'            }            var notification = new Notification("It's time!", options)          }          Notification.requestPermission().then(function (result) {            if (result === 'granted') {              console.log('here');              setTimeout(notify, 10000) // wait for 10 seconds to notify            }          })          // Initialize Firebase          var config = {            apiKey: "AIzaSyAUjoyrSiM2dWgqj5rcMYARG3PC46v3Gwk",            authDomain: "knowyourpills.firebaseapp.com",            databaseURL: "https://knowyourpills.firebaseio.com",            projectId: "knowyourpills",            storageBucket: "knowyourpills.appspot.com",            messagingSenderId: "562459622714"          }          firebase.initializeApp(config)          firebase.database().ref('status').set('upcoming')        },        toggleModal: function () {          this.showModal = !this.showModal        }      }    })    </script>  </body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110395923-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110395923-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Item Found</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="public/css/main2.css">
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+  </head>
+  <body>
+    <div class="item-found" id="app" v-cloak>
+      <div class="modal" v-bind:class="{ 'is-active': showModal }">
+        <div class="modal-background" @click="toggleModal"></div>
+        <div class="modal-content">
+          <div class="content" v-for="detail in details">
+            <p>{{ detail }}</p>
+          </div>
+        </div>
+        <button @click="toggleModal" class="modal-close is-large" aria-label="close"></button>
+      </div>
+      <div class="banner animated fadeOutUp">
+        <p class="is-size-2">Item Found!</p>
+      </div>
+      <div class="level is-mobile navigation">
+        <div class="level-item">
+          <a href="dashboard.html">
+            <img class="logo" src="public/assets/Logo.png" alt="logo">
+          </a>
+        </div>
+      </div>
+      <div class="result-body">
+        <div class="columns is-mobile is-gapless">
+          <div class="column is-4">
+            <img :src="logo" alt="pill logo">
+          </div>
+          <div class="column is-8">
+            <p class="name">{{ name }}</p>
+            <p class="amount">{{ usage.amount_per_take }} {{ unit }}</p>
+            <p class="special-instr">{{ usage.special_instr }}</p>
+            <button @click="toggleModal" class="button more-info"><span class="fa fa-info-circle"></span>more info</button>
+          </div>
+        </div>
+      </div>
+      <div class="create-reminder has-text-centered">
+        <button @click="createReminder">{{ buttonName }}</button>
+      </div>
+      <a href="scan.html">
+        <div class="scan has-text-centered">
+          Scan Next
+        </div>
+      </a>
+      <div class="columns is-mobile is-gapless">
+        <a href="reminders.html" class="column is-half">
+          <div class="reminders has-text-centered">
+            Reminders
+          </div>
+        </a>
+        <a href="history.html" class="column is-half">
+          <div class="history has-text-centered">
+            History
+          </div>
+        </a>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        details: ['Clinically Studied Multivitamin', 'Energy', 'Calorie Burning', 'Antioxidants: More antioxidant power than ever and over 30 clinically studied ingredients in every formula - all in smaller, easier-to-swallow pills.', 'Women\'s Health: Contains a clinically studied women\'s multivitamin formula shown to work better than a basic multivitamin. Helps to support bone health.', 'Energy: Shown to improve levels of key B vitamins essential for energy production.\nCalorie Burning: Features combination of thermogenic ingredients ingredients that may support calorie burning and mental sharpness.', 'Antioxidants: Packed with antioxidants to help fight free radicals that can be produced by intense exercise.'],
+        logo: 'public/assets/0048107103507.png',
+        name: 'Women\'s Ultra Mega Energy & Metabolism',
+        usage: {
+          'amount_per_take': 1,
+          'special_instr': 'with food',
+          'takes_per_day': 2
+        },
+        unit: 'Softgel',
+        manufacturer: 'GNC',
+        buttonName: 'Create a Reminder',
+        showModal: false
+      },
+      methods: {
+        createReminder: function () {
+          this.buttonName = 'Reminder added! ☑️'
+
+          function notify() {
+            var options = {
+                body: 'Click to see what pills need to take.'
+            }
+            var notification = new Notification("It's time!", options)
+          }
+
+          Notification.requestPermission().then(function (result) {
+            if (result === 'granted') {
+              console.log('here');
+              setTimeout(notify, 10000) // wait for 10 seconds to notify
+            }
+          })
+
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyAUjoyrSiM2dWgqj5rcMYARG3PC46v3Gwk",
+            authDomain: "knowyourpills.firebaseapp.com",
+            databaseURL: "https://knowyourpills.firebaseio.com",
+            projectId: "knowyourpills",
+            storageBucket: "knowyourpills.appspot.com",
+            messagingSenderId: "562459622714"
+          }
+          firebase.initializeApp(config)
+
+          firebase.database().ref('status').set('upcoming')
+        },
+        toggleModal: function () {
+          this.showModal = !this.showModal
+        }
+      }
+    })
+    </script>
+  </body>
+</html>
