@@ -18,6 +18,10 @@ body {
   color: #ffe57f;
 }
 
+.level.is-mobile .level-item {
+  margin-right: 0;
+}
+
 .section {
   font-size: 1.2em;
   line-height: 2em;
