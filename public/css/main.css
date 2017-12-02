@@ -40,7 +40,6 @@ body {
 
 .section button {
   font-size: 2em;
-  color: white;
 }
 
 .section .logo {
@@ -81,6 +80,14 @@ body {
 
 .status {
   font-size: 36px;
+}
+
+.complete-button {
+  color: #5cc8e4;
+}
+
+.complete-button-checked {
+  color: #00b04f;
 }
 
 .banner {

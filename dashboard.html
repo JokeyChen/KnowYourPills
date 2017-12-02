@@ -28,7 +28,7 @@
       <div class="section">
         <img v-if="status == 'default'" class="logo" src="public/assets/Logo.png" alt="logo">
         <p v-if="status == 'upcoming'" class="status">Coming up...</p>
-        <p v-if="status == 'due'"><em>It's time!</em></p>
+        <p v-if="status == 'due'" class="status"><em>It's time!</em></p>
         <div class="result-body" v-if="status == 'upcoming' || status == 'due'">
           <div class="columns is-mobile is-gapless">
             <div class="column is-4">
@@ -41,7 +41,9 @@
             </div>
           </div>
         </div>
-        <button v-if="status == 'due'" @click="complete">Complete<i :class="completeIcon" aria-hidden="true"></i></button>
+        <div class="has-text-centered">
+          <button v-bind:class="buttonStyle" v-if="status == 'due'" @click="complete"><i :class="completeIcon" aria-hidden="true"></i> Complete</button>
+        </div>
       </div>
       <a href="scan.html">
         <div class="scan has-text-centered">
@@ -76,16 +78,18 @@
         },
         unit: 'Softgel',
         manufacturer: 'GNC',
-        buttonClicked: false,
         status: 'default',
+        buttonStyle: 'complete-button',
         completeIcon: 'fa fa-square-o'
       },
       methods: {
         complete: function () {
           if (this.completeIcon === 'fa fa-check-square-o') {
             this.completeIcon = 'fa fa-square-o'
+            this.buttonStyle = 'complete-button'
           } else {
             this.completeIcon = 'fa fa-check-square-o'
+            this.buttonStyle = 'complete-button-checked'
           }
         }
       }
