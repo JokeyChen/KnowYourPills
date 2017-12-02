@@ -18,9 +18,14 @@ body {
   color: #ffe57f;
 }
 
+.level.is-mobile .level-item {
+  margin-right: 0;
+}
+
 .section {
   font-size: 1.2em;
   line-height: 2em;
+  min-height: 60vh;
 }
 
 .section p {
@@ -42,6 +47,10 @@ body {
   margin: 65px 0 65px 50px;
   width: 300px;
   height: 200px;
+}
+
+.section .result-body {
+  padding-top: 0;
 }
 
 .scan {
@@ -70,6 +79,10 @@ body {
   color: white;
 }
 
+.status {
+  font-size: 36px;
+}
+
 .banner {
   background-color: #52d93d;
   color: white;
@@ -94,38 +107,48 @@ body {
   background-color: #1c3754;
 }
 
-.item-found button {
+.result-body {
+  padding-top: 60px;
+}
+
+.amount {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.special-instr {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.create-reminder button {
   font-size: 2em;
   color: white;
+  background-color: #5cc8e4;
+  border-width: 0;
+  border-radius: 20px;
+  width: 75%;
+  height: 70px;
 }
 
-.result-body img {
-  padding-top: 40px;
-  width: 40%;
-  padding-left: 40px;
-}
-
-.result-body img, .result-body .med-name {
-  padding-left: 15%;
-}
-
-.result-body {
-  padding-top: 20px;
-}
-
-.direction-num {
-  font-size: 8.2rem;
-  text-align: right;
-  padding-right: 10px;
-}
-
-.direction-text {
-  padding-top: 45px;
-  width: 100px;
+.create-reminder button:disabled {
+  background-color: transparent;
 }
 
 .create-reminder {
   margin: 40px 0;
+}
+
+.more-info {
+  background-color: #7f7f7f;
+  color: #ffe57f;
+  border-width: 0;
+  border-radius: 10px;
 }
 
 .error-body {
