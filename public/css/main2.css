@@ -123,6 +123,10 @@ body {
   height: 70px;
 }
 
+.create-reminder button:disabled {
+  background-color: transparent;
+}
+
 .create-reminder {
   margin: 40px 0;
 }
