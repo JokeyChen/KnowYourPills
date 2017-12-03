@@ -16,24 +16,34 @@
         <div class="level-item">
           <a href="help.html">Help</a>
         </div>
-        <div class="level-item" v-if="status == 'upcoming' || status == 'due'">
+        <!-- <div class="level-item" v-if="status == 'upcoming' || status == 'due'">
           <a href="dashboard.html">
             <img class="logo" src="public/assets/Logo.png" alt="logo">
           </a>
-        </div>
+        </div> -->
         <div class="level-item">
           <a href="settings.html">Settings</a>
         </div>
       </div>
       <div class="section">
         <img v-if="status == 'default'" class="logo" src="public/assets/Logo.png" alt="logo">
-        <p v-if="status == 'upcoming'">Coming up...</p>
-        <p v-if="status == 'due'"><em>It's time!</em></p>
-        <div class="pill-data" v-if="status == 'upcoming' || status == 'due'">
-          <img src="public/assets/GNClogo.png" alt="GNC">
-          <p>GNC Triple Strength Fish Oil<span>1 Capsule</span>with dinner tonight</p>
+        <p v-if="status == 'upcoming'" class="status">Coming up...</p>
+        <p v-if="status == 'due'" class="status"><em>It's time!</em></p>
+        <div class="result-body" v-if="status == 'upcoming' || status == 'due'">
+          <div class="columns is-mobile is-gapless">
+            <div class="column is-4">
+              <img :src="logo" alt="pill logo">
+            </div>
+            <div class="column is-8">
+              <p class="name">{{ name }}</p>
+              <p class="amount">{{ usage.amount_per_take }} {{ unit }}</p>
+              <p class="special-instr">{{ usage.special_instr }}</p>
+            </div>
+          </div>
         </div>
-        <button v-if="status == 'due'" @click="complete">Complete<i :class="completeIcon" aria-hidden="true"></i></button>
+        <div class="has-text-centered">
+          <button v-bind:class="buttonStyle" v-if="status == 'due'" @click="complete"><i :class="completeIcon" aria-hidden="true"></i> Complete</button>
+        </div>
       </div>
       <a href="scan.html">
         <div class="scan has-text-centered">
@@ -58,15 +68,28 @@
     var app = new Vue({
       el: '#app',
       data: {
+        details: ['Clinically Studied Multivitamin', 'Energy', 'Calorie Burning', 'Antioxidants: More antioxidant power than ever and over 30 clinically studied ingredients in every formula - all in smaller, easier-to-swallow pills.', 'Women\'s Health: Contains a clinically studied women\'s multivitamin formula shown to work better than a basic multivitamin. Helps to support bone health.', 'Energy: Shown to improve levels of key B vitamins essential for energy production.\nCalorie Burning: Features combination of thermogenic ingredients ingredients that may support calorie burning and mental sharpness.', 'Antioxidants: Packed with antioxidants to help fight free radicals that can be produced by intense exercise.'],
+        logo: 'public/assets/0048107103507.png',
+        name: 'Women\'s Ultra Mega Energy & Metabolism',
+        usage: {
+          'amount_per_take': 1,
+          'special_instr': 'with food',
+          'takes_per_day': 2
+        },
+        unit: 'Softgel',
+        manufacturer: 'GNC',
         status: 'default',
+        buttonStyle: 'complete-button',
         completeIcon: 'fa fa-square-o'
       },
       methods: {
         complete: function () {
           if (this.completeIcon === 'fa fa-check-square-o') {
             this.completeIcon = 'fa fa-square-o'
+            this.buttonStyle = 'complete-button'
           } else {
             this.completeIcon = 'fa fa-check-square-o'
+            this.buttonStyle = 'complete-button-checked'
           }
         }
       }

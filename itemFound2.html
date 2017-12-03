@@ -22,6 +22,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
   </head>
   <body>
+
     <div class="item-found" id="app" v-cloak>
       <div class="modal" v-bind:class="{ 'is-active': showModal }">
         <div class="modal-background" @click="toggleModal"></div>
@@ -37,9 +38,13 @@
       </div>
       <div class="level is-mobile navigation">
         <div class="level-item">
-          <a href="dashboard.html">
-            <img class="logo" src="public/assets/Logo.png" alt="logo">
-          </a>
+          <a href="help.html">Help</a>
+        </div>
+        <div class="level-item">
+          <a href="dashboard.html">Home</a>
+        </div>
+        <div class="level-item">
+          <a href="settings.html">Settings</a>
         </div>
       </div>
       <div class="result-body">
@@ -97,7 +102,7 @@
       },
       methods: {
         createReminder: function () {
-          this.buttonName = 'Reminder added! ☑️'
+          this.buttonName = 'Reminder added!'
           this.buttonClicked = true
           console.log("[Create a reminder] clicked")
           tracker = ga.getAll()[0];
